@@ -343,3 +343,14 @@ EXECUTE spBuscaEmailAluno 'fatima@gmail.com';
 Excluindo uma SP
 */
 DROP PROCEDURE spBuscaEmailAluno;
+
+/*
+Criar uma SP para mostrar fone e email de todos os alunos
+*/
+
+CREATE PROCEDURE spMostraFoneeEmailAlunos
+
+AS
+SELECT fone, email FROM tab_alunos;
+
+EXECUTE spMostraFoneeEmailAlunos;
