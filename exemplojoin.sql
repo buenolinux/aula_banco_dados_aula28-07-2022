@@ -67,3 +67,14 @@ SELECT tab_funcionarios. * ,
 	FROM tab_funcionarios
 	FULL OUTER JOIN tab_profissoes
 	ON tab_funcionarios.codigo = tab_profissoes.codigo;
+
+/*
+CROSS JOIN
+Basicamente é o produto cartesiano entre as duas tabelas.
+Para cada linha da tabela A, são retornadas todas as linhas da tabela B
+*/
+
+SELECT tab_funcionarios. * ,
+		tab_profissoes.*
+	FROM tab_funcionarios
+	CROSS JOIN tab_profissoes;
