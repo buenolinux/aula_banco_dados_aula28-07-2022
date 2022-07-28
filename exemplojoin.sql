@@ -25,3 +25,21 @@ Retorna dados apenas quando as duas tabelas tem
 chaves correspondentes na cláusula ON do JOIN
 
 */
+
+SELECT tab_funcionarios. * ,
+		tab_profissoes.*
+	FROM tab_funcionarios
+	INNER JOIN tab_profissoes
+	ON tab_funcionarios.codigo = tab_profissoes.codigo;
+/*
+LEFT JOIN
+Retorna a tabela A inteira e apenas os registros que coincidirem com a igualdade do join na tabela B
+ou nulos para os campos sem correspondência
+
+*/
+
+SELECT tab_funcionarios. * ,
+		tab_profissoes.*
+	FROM tab_funcionarios
+	LEFT JOIN tab_profissoes
+	ON tab_funcionarios.codigo = tab_profissoes.codigo;
