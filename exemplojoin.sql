@@ -144,3 +144,26 @@ Criar uma view para mostrar o nome da turma,
 do aluno, número da sala e nome do professor
 o nome da view será vwTurmas
 */
+SELECT * FROM tab_alunos;
+SELECT * FROM tab_professores;
+SELECT * FROM tab_salas;
+SELECT * FROM tab_turmas;
+
+CREATE VIEW vwTurmas
+AS
+SELECT tab_turmas.nome AS 'Nome da turma',
+	   tab_alunos.nome AS 'Nome do aluno',
+	   tab_salas.numero AS 'Número da sala',
+	   tab_professores.nome AS 'Nome do professor'
+	   FROM tab_alunos
+	   
+	   INNER JOIN tab_turmas
+	   ON tab_turmas.id_aluno = tab_alunos.id_aluno
+
+	   INNER JOIN tab_professores
+	   ON tab_professores.id_professor = tab_turmas.id_professor
+
+	   INNER JOIN tab_salas
+	   ON tab_salas.id_sala = tab_turmas.id_sala
+
+SELECT * FROM vwTurmas;
