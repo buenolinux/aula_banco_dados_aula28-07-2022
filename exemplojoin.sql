@@ -109,3 +109,38 @@ SELECT id_aluno AS 'Código',
 	   email AS [E-mail],
 	   fone AS Celular
 FROM tab_alunos;
+
+/*
+Executando a  VIEW
+*/
+
+SELECT * FROM vwAlunos;
+/*
+Os campos devem ser referenciados pelo rótulo que foi usado no momento da criação da VIEW
+*/
+SELECT Nome, Celular FROM vwAlunos;
+
+/*
+	Removendo uma view
+*/
+
+DROP VIEW vwAlunos;
+
+/*
+Alterar a VIEW
+*/
+
+ALTER VIEW vwAlunos
+AS 
+SELECT id_aluno AS 'Código', 
+	   nome AS Nome,
+	   email AS [E-mail],
+	   fone AS Celular
+FROM tab_alunos 
+WHERE email LIKE '%@gmail.com';
+
+/*
+Criar uma view para mostrar o nome da turma, 
+do aluno, número da sala e nome do professor
+o nome da view será vwTurmas
+*/
