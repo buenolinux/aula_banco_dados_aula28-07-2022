@@ -78,3 +78,19 @@ SELECT tab_funcionarios. * ,
 		tab_profissoes.*
 	FROM tab_funcionarios
 	CROSS JOIN tab_profissoes;
+
+
+/*
+**********************************************
+*/
+
+/*
+Criando VIEWS 
+A view pode ser definida como uma tabela virtual composta por linhas e colunas de dados vindos
+de tabelas reclaiconadas em uma query (um agrupamento de select 's por exemplo ). As linhas e colunas da view
+são geradas dinâmicamente no momento em que é feita uma referência a ela.
+As views ficam armazenadas em:
+
+Seu banco de dados 
+Exibições
+*/
