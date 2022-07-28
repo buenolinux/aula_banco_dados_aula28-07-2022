@@ -166,4 +166,52 @@ SELECT tab_turmas.nome AS 'Nome da turma',
 	   INNER JOIN tab_salas
 	   ON tab_salas.id_sala = tab_turmas.id_sala
 
-SELECT * FROM vwTurmas;
+/*
+Executando a VIEW
+*/
+
+SELECT * FROM vwTurmas
+
+/*
+Corrigindo os rotulos da VIEW
+*/
+ALTER VIEW vwTurmas
+AS
+SELECT tab_turmas.nome AS 'Turma',
+	   tab_alunos.nome AS 'Aluno',
+	   tab_salas.numero AS 'Sala',
+	   tab_professores.nome AS 'Professor'
+	   FROM tab_alunos
+	   
+	   INNER JOIN tab_turmas
+	   ON tab_turmas.id_aluno = tab_alunos.id_aluno
+
+	   INNER JOIN tab_professores
+	   ON tab_professores.id_professor = tab_turmas.id_professor
+
+	   INNER JOIN tab_salas
+	   ON tab_salas.id_sala = tab_turmas.id_sala
+
+
+SELECT * FROM vwTurmas WHERE Sala =2;
+SELECT Turma, Professor FROM vwTurmas;
+
+/*
+Exercício 
+Criar um view para mostrar o nome do professor e
+dos alunos de cada turma
+*/
+
+CREATE VIEW vwProfessorAluno
+AS
+SELECT tab_professores.nome As Professor,
+		tab_alunos.nome AS Aluno
+		/*tab_turmas.nome*/
+	FROM tab_turmas
+		INNER JOIN tab_professores
+	ON tab_professores.id_professor = tab_turmas.id_professor
+
+	INNER JOIN tab_alunos
+	ON tab_turmas.id_aluno = tab_alunos.id_aluno;
+
+	
