@@ -278,4 +278,21 @@ SELECT * FROM 	vwProfessorAlunoSql;
 SELECT * FROM 	vwProfessorAlunoC;
 SELECT * FROM 	vwProfessorAlunoRedes;
 SELECT * FROM	vwProfessorAlunoExcel;
-	
+
+/*
+Criar uma VIEW para mostrar o nome do professor Fábio e sua turma
+*/
+
+CREATE VIEW vwMostraTurmaFabio 
+AS
+SELECT tab_professores.nome AS Professor,
+		tab_alunos.nome AS Alunos,
+		tab_turmas.nome AS Turmas
+
+		FROM tab_turmas
+		INNER JOIN tab_professores
+		ON tab_professores.id_professor = tab_turmas.id_professor
+
+		INNER JOIN tab_alunos
+		ON tab_alunos.id_aluno = tab_turmas.id_aluno
+		WHERE tab_professores.nome = 'Fábio';
