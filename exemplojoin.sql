@@ -94,3 +94,18 @@ As views ficam armazenadas em:
 Seu banco de dados 
 Exibições
 */
+
+USE escola;
+/*
+Criando uma view para mostrar o id, nome, email e fone dos alunos
+
+*/
+ /* é uma boa prática usar vw para VIEWS*/
+ /*quando tem acento devemos usar aspas ou colchetes*/
+CREATE VIEW vwAlunos
+AS
+SELECT id_aluno AS 'Código', 
+	   nome AS Nome,
+	   email AS [E-mail],
+	   fone AS Celular
+FROM tab_alunos;
