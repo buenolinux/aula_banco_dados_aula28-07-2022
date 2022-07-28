@@ -339,3 +339,7 @@ Executando a SP (stored procedure)
 */
 EXECUTE spBuscaEmailAluno '%gmail%'; /* filtra os emails que tenha gmail*/
 EXECUTE spBuscaEmailAluno 'fatima@gmail.com';
+/*
+Excluindo uma SP
+*/
+DROP PROCEDURE spBuscaEmailAluno;
