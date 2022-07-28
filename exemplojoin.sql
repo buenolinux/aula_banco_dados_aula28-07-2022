@@ -19,3 +19,9 @@ VALUES
 
 SELECT * FROM tab_funcionarios; 
 SELECT * FROM tab_profissoes;
+-- INNER JOIN
+/*
+Retorna dados apenas quando as duas tabelas tem 
+chaves correspondentes na cláusula ON do JOIN
+
+*/
