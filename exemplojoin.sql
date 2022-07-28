@@ -205,8 +205,8 @@ dos alunos de cada turma
 CREATE VIEW vwProfessorAluno
 AS
 SELECT tab_professores.nome As Professor,
-		tab_alunos.nome AS Aluno
-		/*tab_turmas.nome*/
+		tab_alunos.nome AS Aluno,
+		tab_turmas.nome
 	FROM tab_turmas
 		INNER JOIN tab_professores
 	ON tab_professores.id_professor = tab_turmas.id_professor
@@ -214,4 +214,68 @@ SELECT tab_professores.nome As Professor,
 	INNER JOIN tab_alunos
 	ON tab_turmas.id_aluno = tab_alunos.id_aluno;
 
+
+CREATE VIEW vwProfessorAlunoSql
+AS
+SELECT tab_professores.nome As Professor,
+		tab_alunos.nome AS Aluno,
+		tab_turmas.nome AS Turma
+	FROM tab_turmas
+		INNER JOIN tab_professores
+	ON tab_professores.id_professor = tab_turmas.id_professor
+
+	INNER JOIN tab_alunos
+	ON tab_turmas.id_aluno = tab_alunos.id_aluno
+	WHERE tab_turmas.nome = 'SQL';
+
+-- ***********************************
+
+CREATE VIEW vwProfessorAlunoC
+AS
+SELECT tab_professores.nome As Professor,
+		tab_alunos.nome AS Aluno,
+		tab_turmas.nome AS Turma
+	FROM tab_turmas
+		INNER JOIN tab_professores
+	ON tab_professores.id_professor = tab_turmas.id_professor
+
+	INNER JOIN tab_alunos
+	ON tab_turmas.id_aluno = tab_alunos.id_aluno
+	WHERE tab_turmas.nome = 'C#';
+
+-- *******************************
+
+CREATE VIEW vwProfessorAlunoRedes
+AS
+SELECT tab_professores.nome As Professor,
+		tab_alunos.nome AS Aluno,
+		tab_turmas.nome AS Turma
+	FROM tab_turmas
+		INNER JOIN tab_professores
+	ON tab_professores.id_professor = tab_turmas.id_professor
+
+	INNER JOIN tab_alunos
+	ON tab_turmas.id_aluno = tab_alunos.id_aluno
+	WHERE tab_turmas.nome = 'Redes';
+
+
+--****************************
+CREATE VIEW vwProfessorAlunoExcel
+AS
+SELECT tab_professores.nome As Professor,
+		tab_alunos.nome AS Aluno,
+		tab_turmas.nome AS Turma
+	FROM tab_turmas
+		INNER JOIN tab_professores
+	ON tab_professores.id_professor = tab_turmas.id_professor
+
+	INNER JOIN tab_alunos
+	ON tab_turmas.id_aluno = tab_alunos.id_aluno
+	WHERE tab_turmas.nome = 'Excel';
+
+SELECT * FROM vwProfessorAluno;
+SELECT * FROM 	vwProfessorAlunoSql;
+SELECT * FROM 	vwProfessorAlunoC;
+SELECT * FROM 	vwProfessorAlunoRedes;
+SELECT * FROM	vwProfessorAlunoExcel;
 	
