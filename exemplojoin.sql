@@ -309,4 +309,33 @@ SELECT tab_professores.nome AS Professor,
 	Seu banco de dados
 	programação
 	Procedimentos armazenados
+
+	Criando uma Stored Procedure para buscar um  email do aluno
 */
+
+
+/*
+Declarando a procedure
+É uma boa prática crar as procedures iniciando com sp
+*/
+
+CREATE PROCEDURE spBuscaEmailAluno
+/*
+Declarando uma variável, as variáveis são criadas com @ antes do nome da variável
+*/
+@busca VARCHAR(50)
+AS 
+/*
+Realiza a consul 
+*/
+SELECT * FROM tab_alunos
+/*
+Utilizando a variável como filtro da pesquisa
+*/
+WHERE email LIKE @busca;
+
+/*
+Executando a SP (stored procedure)
+*/
+EXECUTE spBuscaEmailAluno '%gmail%'; /* filtra os emails que tenha gmail*/
+EXECUTE spBuscaEmailAluno 'fatima@gmail.com';
